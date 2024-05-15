@@ -120,51 +120,49 @@ def sacar_stats():
 
     # Estadísticas para la variable 'inicioClase'
     n = 0
-    n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    n1, n2, n3, n4, n5, n6 = 0, 0, 0, 0, 0, 0
     for i in inicioClase:
-        if (i == '02:30' or i == '02:35' or i == '02:40') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entedendimientoClase_primerDia[n] == 'Excelente':
             n1 += 1
 
-        if (i == '02:45' or i == '02:50' or i == '02:55') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entedendimientoClase_primerDia[n] == 'Normal':
             n2 += 1
 
-        if (i == '03:00' or i == '04:30' or i == '04:35') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entedendimientoClase_primerDia[n] == 'Poco':
             n3 += 1
 
-        if (i == '04:40' or i == '04:45' or i == '04:50') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entendimientoclases_sdoDia[n] == 'Excelente':
             n4 += 1
 
-        if (i == '04:55' or i == '05:00' or i == '06:30') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entendimientoclases_sdoDia[n] == 'Normal':
             n5 += 1
 
-        if (i == '06:35' or i == '06:40' or i == '06:45') and entedendimientoClase_primerDia[n] == 'si':
+        if (i == '07:00' or i == '09:00' or i=='11:00') and entendimientoclases_sdoDia[n] == 'Poco':
             n6 += 1
-
-        if (i == '06:50' or i == '06:55' or i == '07:00') and entedendimientoClase_primerDia[n] == 'si':
-            n7 += 1
-
-        if (i == '02:30' or i == '02:35' or i == '02:40') and entedendimientoClase_primerDia[n] == 'no':
-            n8 += 1
-
-        if (i == '02:45' or i == '02:50' or i == '02:55') and entedendimientoClase_primerDia[n] == 'no':
-            n9 += 1
-
-        if (i == '03:00' or i == '04:30' or i == '04:35') and entedendimientoClase_primerDia[n] == 'no':
-            n10 += 1
-
-        if (i == '04:40' or i == '04:45' or i == '04:50') and entedendimientoClase_primerDia[n] == 'no':
-            n11 += 1
-
-        if (i == '04:55' or i == '05:00' or i == '06:30') and entedendimientoClase_primerDia[n] == 'no':
-            n12 += 1
-
-        if (i == '06:35' or i == '06:40' or i == '06:45') and entedendimientoClase_primerDia[n] == 'no':
-            n13 += 1
-
-        if (i == '06:50' or i == '06:55' or i == '07:00') and entedendimientoClase_primerDia[n] == 'no':
-            n14 += 1
-
         n += 1
-    listaDeValores.extend([n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14])
+    listaDeValores.extend([n1, n2, n3, n4, n5, n6])
 
+    # Estadísticas para la variable 'FinClase'
+    n = 0
+    n1, n2, n3, n4, n5, n6 = 0, 0, 0, 0, 0, 0
+    for i in finClase:
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entedendimientoClase_primerDia[n] == 'Excelente':
+            n1 += 1
+
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entedendimientoClase_primerDia[n] == 'Normal':
+            n2 += 1
+
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entedendimientoClase_primerDia[n] == 'Poco':
+            n3 += 1
+
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entendimientoclases_sdoDia[n] == 'Excelente':
+            n4 += 1
+
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entendimientoclases_sdoDia[n] == 'Normal':
+            n5 += 1
+
+        if (i == '09:00' or i == '11:00' or i == '01:00') and entendimientoclases_sdoDia[n] == 'Poco':
+            n6 += 1
+        n += 1
+    listaDeValores.extend([n1, n2, n3, n4, n5, n6])
 
