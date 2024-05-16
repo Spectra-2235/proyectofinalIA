@@ -166,3 +166,171 @@ def sacar_stats():
         n += 1
     listaDeValores.extend([n1, n2, n3, n4, n5, n6])
 
+    # Estadísticas para la variable 'primerDia'
+    n = 0
+    n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,n11,n12 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0
+
+    for i in primerDia:
+        if i == 'Lunes' and entedendimientoClase_primerDia[n] == 'Excelente':
+            n1 += 1
+        if i == 'Martes' and entedendimientoClase_primerDia[n] == 'Excelente':
+            n2 += 1
+        if i == 'Lunes' and entedendimientoClase_primerDia[n] == 'Normal':
+            n3 += 1
+        if i == 'Martes' and entedendimientoClase_primerDia[n] == 'Normal':
+            n4 += 1
+        if i == 'Lunes' and entedendimientoClase_primerDia[n] == 'Poco':
+            n5 += 1
+        if i == 'Martes' and entedendimientoClase_primerDia[n] == 'Poco':
+            n6 += 1
+
+        if i == 'Lunes' and entendimientoclases_sdoDia[n] == 'Excelente':
+            n7 += 1
+        if i == 'Martes' and entendimientoclases_sdoDia[n] == 'Excelente':
+            n8 += 1
+        if i == 'Lunes' and entendimientoclases_sdoDia[n] == 'Normal':
+            n9 += 1
+        if i == 'Martes' and entendimientoclases_sdoDia[n] == 'Normal':
+            n10 += 1
+        if i == 'Lunes' and entendimientoclases_sdoDia[n] == 'Poco':
+            n11 += 1
+        if i == 'Martes' and entendimientoclases_sdoDia[n] == 'Poco':
+            n12 += 1
+        n += 1
+    listaDeValores.extend([n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,n11,n12])
+
+    # Estadísticas para la variable 'SegundoDia'
+    n = 0
+    n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+    for i in sdoDia:
+        if i == 'Miercoles' and entedendimientoClase_primerDia[n] == 'Excelente':
+            n1 += 1
+        if i == 'Jueves' and entedendimientoClase_primerDia[n] == 'Excelente':
+            n2 += 1
+        if i == 'Miercoles' and entedendimientoClase_primerDia[n] == 'Normal':
+            n3 += 1
+        if i == 'Jueves' and entedendimientoClase_primerDia[n] == 'Normal':
+            n4 += 1
+        if i == 'Miercoles' and entedendimientoClase_primerDia[n] == 'Poco':
+            n5 += 1
+        if i == 'Jueves' and entedendimientoClase_primerDia[n] == 'Poco':
+            n6 += 1
+
+        if i == 'Miercoles' and entendimientoclases_sdoDia[n] == 'Excelente':
+            n7 += 1
+        if i == 'Jueves' and entendimientoclases_sdoDia[n] == 'Excelente':
+            n8 += 1
+        if i == 'Miercoles' and entendimientoclases_sdoDia[n] == 'Normal':
+            n9 += 1
+        if i == 'Jueves' and entendimientoclases_sdoDia[n] == 'Normal':
+            n10 += 1
+        if i == 'Miercoles' and entendimientoclases_sdoDia[n] == 'Poco':
+            n11 += 1
+        if i == 'Jueves' and entendimientoclases_sdoDia[n] == 'Poco':
+            n12 += 1
+        n += 1
+    listaDeValores.extend([n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12])
+
+    # Estadísticas para la variable 'entedendimientoClase_primerDia'
+    n = 0
+    n1, n2,n3 = 0, 0,0
+    for i in entedendimientoClase_primerDia:
+        if entedendimientoClase_primerDia[n] == 'Excelente':
+            n1 += 1
+        if entedendimientoClase_primerDia[n] == 'Normal':
+            n2 += 1
+        if entedendimientoClase_primerDia[n]=='Poco':
+            n3+=1
+        n += 1
+
+    # Estadísticas para la variable 'entendimientoclases_sdoDia'
+    n = 0
+    n1, n2, n3 = 0, 0, 0
+    for i in entendimientoclases_sdoDia:
+        if entendimientoclases_sdoDia[n] == 'Excelente':
+            n1 += 1
+        if entendimientoclases_sdoDia[n] == 'Normal':
+            n2 += 1
+        if entendimientoclases_sdoDia[n] == 'Poco':
+            n3 += 1
+        n += 1
+
+    # Actualizar variables globales
+    datos_excelente, datos_Normal, datos_Poco = n1, n2,n3
+    datosTotales = int(n1 + n2+n3)
+
+    # Asegurarse de que no haya valores cero en listaDeValores
+    k = 0
+    for i in listaDeValores:
+        if i == 0:
+            listaDeValores[k] = 1
+        k += 1
+
+    # Llamar a la función 'pedir' con los datos calculados
+    pedir(datos_excelente, datos_Normal,datos_Poco)
+
+
+# Definir función para solicitar datos al usuario y calcular probabilidades
+def pedir(Excelente, Normal,Poco):
+    a = input("Selecciona la calificación de las materias que quieras ver: 1: Lunes y Martes, 2: Miercoles y Jueves")
+    b = input(
+        "Selecciona El Inicio de Clase: 1: 7:00, 2: 9:00, 3: 11:00 ")
+    c = input(
+        "Selecciona El Fin de la Clase: 1: 9:00, 2: 11:00, 3: 01:00")
+
+
+    # Llamar a la función 'Calcular' con los datos ingresados por el usuario
+    Calcular(a, b, c, Excelente, Normal,Poco)
+
+# Definir función para calcular probabilidades
+def Calcular(n1, n2, n3, n4, n5, excelente, normal,poco):
+    datos_excelente, datos_Normal,datos_Poco = excelente, normal,poco
+    global listaDeValores, datos_totales
+
+    # Inicializar variables para probabilidades
+    excelente, normal,poco = 0, 0,0
+    suma = 0
+    p_excelente, p_normal,p_poco = 0, 0,0
+
+    # Calcular probabilidades para la variable 'Materia'
+
+
+    #---------------- Inicio Clase ----------------
+
+    # ---------------- Fin Clase ------------------
+
+    # ---------------- Primer Clase ---------------
+
+    # ---------------- Segundo Clase ---------------
+
+
+
+
+
+# Leer datos del archivo CSV
+leer_datos()
+
+# Calcular estadísticas
+sacar_stats()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
